@@ -25,3 +25,18 @@ var removeDuplicates = function (nums) {
   }
   return nums.length;
 };
+
+// 遍历方法 ⭐️ 性能差
+var removeDuplicates = function (nums) {
+  let idx = 1;
+  let cur = nums[0];
+  while (idx <= nums.length - 1) {
+    if (nums[idx] === cur) {
+      nums.splice(idx, 1);
+    } else {
+      cur = nums[idx];
+      idx++;
+    }
+  }
+  return nums.length;
+};
