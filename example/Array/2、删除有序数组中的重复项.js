@@ -12,6 +12,24 @@
  * @return {number}
  */
 
+// 快慢指针  ⭐️⭐️⭐️
+var removeDuplicates = function (nums) {
+  if (nums.length == 0) {
+    return 0;
+  }
+  let slow = 0,
+    fast = 0;
+  while (fast < nums.length) {
+    if (nums[fast] != nums[slow]) {
+      slow++;
+      nums[slow] = nums[fast];
+    }
+    fast++;
+  }
+  // 数组长度为索引 + 1
+  return slow + 1;
+}
+
 // 递归循环方法 性能：较差 推荐指数：⭐️⭐️  算法复杂度O(n²)
 var removeDuplicates = function (nums) {
   let map = new Map();
