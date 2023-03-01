@@ -23,3 +23,18 @@ var removeElement = function (nums, val) {
   }
   return nums.length;
 };
+
+var removeElement = function (nums, val) {
+  if (nums.length <= 0) {
+    return 0;
+  }
+  let idx;
+  for (idx = 0; idx < nums.length; ) {
+    if (nums[i] === val) {
+      nums.splice(idx, 1);
+    } else {
+      idx++;
+    }
+  }
+  return nums.length;
+};
