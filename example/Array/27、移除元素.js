@@ -10,6 +10,24 @@
  * @return {number}
  */
 
+// 快慢指针
+var removeElement = function (nums, val) {
+  if (nums.length <= 0) {
+    return 0;
+  }
+  let fast = 0,
+    slow = 0;
+  while (fast < nums.length) {
+    if (nums[fast] != val) {
+      nums[slow] = nums[fast];
+      slow++;
+    }
+    fast++;
+  }
+  return slow;
+};
+
+
 // 递归遍历查找 ⭐️⭐️
 var removeElement = function (nums, val) {
   if (nums.length <= 0) {
@@ -24,6 +42,7 @@ var removeElement = function (nums, val) {
   return nums.length;
 };
 
+// 循环遍历法
 var removeElement = function (nums, val) {
   if (nums.length <= 0) {
     return 0;
